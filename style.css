@@ -7,6 +7,11 @@
     color: #fff;
     font-family: 'Montserrat', sans-serif;
 }
+html,body{
+    height: 100%;
+    perspective: 800px;
+    width: 100%;
+}
 
 #nav{
     height: 130px;
@@ -19,7 +24,6 @@
     position: fixed;
     justify-content: flex-start;
     z-index: 999;
-
 }
 #cursor{
     height: 25px;
@@ -81,7 +85,144 @@ video{
     /* z-index: -1; */
 }
 #page2{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     z-index: 10 ;
+}
+
+#scroller h4{
+    font-size: 140px;
+    display: inline-block;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px #94C11E;
+    transition: all linear 0.5s;
+}
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 111;
+}
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;    
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller h4:hover{
+    color: #94C11E;
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    height: 40vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+    position: relative;
+}
+#about-us img{
+    height: 220px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+#about-us-in{
+    width: 50%;
+    text-align: center;
+}
+#about-us-in h3{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+#about-us-in p{
+    font-size: 20px;
+    line-height: 26px;
+}
+#card-container{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    align-items: center;
+}
+.card{
+    overflow: hidden;
+    border-radius: 20px;
+    height: 80%;
+    width: 22%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: all ease 1s;
+
+}
+#card1{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2JUliLqnk3W_3nmRRGFAQ0O4TBnHD1GxClg&usqp=CAU');
+}
+
+#card2{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRja6-My8YJFH35JX-onZxj_ZoIIrKxmRShiA&usqp=CAU');
+}
+#card3{
+    background-image: url('https://meruvalley.com.my/wp-content/uploads/2023/05/Website.jpg');
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #94C11E;
+    padding: 30px;
+    padding-top: 100px;
+    opacity: 0;
+    z-index: 99;
+    transition: all ease 0.6s;
+    position: relative;
+}
+.overlay h4{
+    color: black;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.overlay p{
+    color: black;
+    /* white-space: nowrap; */
+}
+.overlay:hover{
+    opacity: 1;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);   
+}
+
+#green-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    /* background-color: red; */
+    background: linear-gradient(to left bottom,#068d06,#94C11E)
+}
+
+#green-div h4{
+    font-size: 25px;
 }
